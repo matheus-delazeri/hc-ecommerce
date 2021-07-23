@@ -1,0 +1,5 @@
+html, body {
+    scroll-behavior: smooth;
+    width: 100%;
+    background-color: #fff;
+}
