@@ -12,8 +12,8 @@ export default function NewCustomer() {
     const [ customer, setCustomer ] = useState({ 
         name: "",
         birthdate: "",
-        cellphone: "  ",
-        email: "  ",
+        cellphone: "",
+        email: "",
         cpf: "",
         city: "",
         district: "",
@@ -41,7 +41,7 @@ export default function NewCustomer() {
         let isOk = true;
         let haveEmpty = false;
         for(var key in customer) {
-            if(customer[key] === ""){
+            if(customer[key] === "" && key !== 'email' && key !== 'cellphone'){
                 isOk = false;
                 haveEmpty = true;
             }
@@ -50,7 +50,7 @@ export default function NewCustomer() {
             alert("Preencha todos os campos obrigatórios!");
             return;
         }
-        if(!validateEmail()){
+        if(customer['email'] !== "" && !validateEmail()){
             isOk = false;
             alert("O e-mail inserido é inválido");
         }

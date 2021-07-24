@@ -85,6 +85,8 @@ export default function NewProduct() {
                                 onChange={input => setProduct({...product, price: input.target.value})}
                             ></S.InputField></S.InputTitle>
                             <br />
+                            <S.Subtitle>Campos com <b>*</b> são obrigatórios.</S.Subtitle>
+                            <br />
                             <S.NewBtn type="button" onClick={ saveToStorage }>Criar produto</S.NewBtn>
                         </S.Content>
                 </S.Body>
