@@ -6,6 +6,8 @@ import Menu from './Components/menu';
 
 export default function Admin() {
     let token = localStorage.getItem("token");
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const customers = JSON.parse(localStorage.getItem('customers')) || [];
     if(token !== null){
         return (
             <S.Main>
@@ -28,14 +30,14 @@ export default function Admin() {
                                     <S.BlockHeader>Produtos</S.BlockHeader>
                                     <S.BlockContent>
                                         <S.BlockIcon className="fa fa-folder"></S.BlockIcon>
-                                        <S.BlockText>20</S.BlockText>
+                                        <S.BlockText>{ products.length }</S.BlockText>
                                     </S.BlockContent>
                                 </S.Block>
                                 <S.Block>
                                     <S.BlockHeader>Clientes</S.BlockHeader>
                                     <S.BlockContent>
                                         <S.BlockIcon className="fa fa-users"></S.BlockIcon>
-                                        <S.BlockText>20</S.BlockText>
+                                        <S.BlockText>{ customers.length }</S.BlockText>
                                     </S.BlockContent>
                                 </S.Block>
                                 <S.Block>

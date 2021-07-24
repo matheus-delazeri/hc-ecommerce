@@ -13,8 +13,15 @@ export default function NewProduct() {
         name: "",
         weight: "",
         stock: "",
-        price: ""
+        price: "",
+        createdAt: "18/11/2001"
     });
+    function getTodayDate(){
+        let today = new Date();
+        let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        return date+' '+time;
+    }
     function saveToStorage(){
         let isOk = true;
         for(var key in product) {
@@ -23,16 +30,23 @@ export default function NewProduct() {
             }
         }
         if(isOk){ 
-            var products = JSON.parse(localStorage.getItem('products')) || {};
-            if(products[product.cod]!==undefined){
+            var products = JSON.parse(localStorage.getItem('products')) || [];
+            let isSet = false;
+            products.map(oldProduct => {
+                if(oldProduct.cod === product.cod){
+                    isSet = true;
+                }
+                return null;
+            })
+            if(!isSet){
+                product.createdAt = getTodayDate();
+                products.push(product);
+                localStorage.setItem(`products`, JSON.stringify(products));
+                alert("Produto cadastrado!");
+                history.push("/admin/products");
+            } else{
                 alert(`O código: ${product.cod} já pertence a um produto.`);
-                return;
             }
-            products[product.cod] = product;
-            console.log(products);
-            localStorage.setItem(`products`, JSON.stringify(products));
-            alert("Produto cadastrado!");
-            history.push("/admin/products");
         }else{
             alert("Preencha todos os campos!");
         }

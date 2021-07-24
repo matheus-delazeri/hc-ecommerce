@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const Header = styled.div`
     display: flex;
     max-width: 100%;
+    min-height: 10%;
     border-bottom: 1px solid #c5c7cc;
     @media (max-width: 990px) {
         flex-direction: column;
+        height: auto;
     }
 `;
 export const HeaderItem = styled.div`
@@ -16,8 +18,7 @@ export const HeaderItem = styled.div`
 `;
 export const Menu = styled.div`
     width: 15%;
-    background-color: #f6f6f6;
-    height: 80vh;
+    height: 90vh;
 `;
 export const MenuOption = styled.div`
     max-width: 100%;
@@ -48,9 +49,9 @@ export const Logo = styled.img`
     display: block;
     margin-left: 10%;
     margin-right: auto;
-    max-width: 50%;
+    max-width: 35%;
     @media (max-width: 990px) {
-        width: 50%;
+        min-width: 50%;
         padding: 2% 0;
         margin-left: auto;
     }
