@@ -88,6 +88,6 @@ export const BlockText = styled.h1`
     font-size: 1.5rem;
     text-align: end;
     @media (max-width: 990px) {
-        font-size: 1rem;
+        font-size: .85rem;
     }
 `;
