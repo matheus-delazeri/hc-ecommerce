@@ -11,6 +11,9 @@ export const Container = styled.div`
     width: 20%;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
     border-radius: 10px;
+    @media (max-width: 990px) {
+        width: 70%;
+    }
 `;
 export const Header = styled.div`
     border-radius: 10px 10px 0 0;
@@ -24,7 +27,6 @@ export const Content = styled.div`
     padding: 10% 0;
     align-items: center;
     flex-direction: column;
-
 `;
 export const Title = styled.h1`
     font-size: 1rem;
