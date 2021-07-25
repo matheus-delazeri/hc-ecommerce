@@ -16,6 +16,7 @@ export default function Home() {
     function login() {
         if(user === userAdm && password === passAdm){
             localStorage.setItem("token", authToken);
+            localStorage.setItem("user", user);
             history.push('/admin');
         }else{
             setError(true);

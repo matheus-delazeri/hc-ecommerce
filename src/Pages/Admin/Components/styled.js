@@ -4,6 +4,8 @@ export const Header = styled.div`
     display: flex;
     max-width: 100%;
     min-height: 10%;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid #c5c7cc;
     @media (max-width: 990px) {
         flex-direction: column;
@@ -12,6 +14,7 @@ export const Header = styled.div`
 `;
 export const HeaderItem = styled.div`
     width: 33%;
+    display: inline-block;
     @media (max-width: 990px) {
         width: auto;
     }
@@ -45,14 +48,16 @@ export const MenuText = styled.span`
     }
 `;
 export const Logo = styled.img`
-    padding: 3% 0;
     display: block;
     margin-left: 10%;
     margin-right: auto;
     max-width: 35%;
     @media (max-width: 990px) {
-        min-width: 50%;
+        min-width: 70%;
         padding: 2% 0;
         margin-left: auto;
+    }
+    &:hover{
+        cursor: pointer;
     }
 `;
