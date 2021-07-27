@@ -61,3 +61,27 @@ export const Logo = styled.img`
         cursor: pointer;
     }
 `;
+export const LogoutContainer = styled.div`
+    position: absolute;
+    bottom: 3%;
+    left: 1.4%;
+    color: #228B22;
+    font-size: 1.2rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+    @media (max-width: 990px) {
+        font-size: 1.5rem;
+        left: 5%;
+        bottom: 2%;
+    }
+
+`;
+export const LogoutText = styled.span`
+    font-family: sans-serif;
+    font-weight: 500;
+    @media (max-width: 990px) {
+        display: none;
+    }
+`;

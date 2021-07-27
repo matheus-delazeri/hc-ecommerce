@@ -56,6 +56,9 @@ export const Block = styled.div`
         height: 100px;
         margin-bottom: 5%;
     }
+    &:hover{
+        -webkit-transform: scale(1.03);
+    }
 `;
 export const BlockHeader = styled.div`
     max-width: 100%;

@@ -16,6 +16,11 @@ export default function Menu() {
                 <S.MenuOption onClick={ function() {
                     history.push('/admin/customers');
                 } }><i className="fa fa-users"></i><S.MenuText> Clientes</S.MenuText></S.MenuOption>
+                <S.LogoutContainer onClick={ function() {
+                    history.push('/');
+                } }>
+                    <i className="fa fa-sign-out"><S.LogoutText> Sair</S.LogoutText></i>
+                </S.LogoutContainer>
             </S.Menu>
         )
 }
